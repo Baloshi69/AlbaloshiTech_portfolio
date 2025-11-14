@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <rect x="6" y="14" width="52" height="36" rx="6" fill="#111827" stroke="#3CE1B8" stroke-width="2" />
+  <path d="M12 20h12l8 11 8-11h12" stroke="#3CE1B8" stroke-width="2" stroke-linecap="round" />
+  <rect x="16" y="30" width="32" height="8" rx="4" fill="#3CE1B8" />
+  <text x="32" y="36" fill="#0B1F1A" font-family="Inter, Arial, sans-serif" font-size="8" font-weight="700" text-anchor="middle">OFAC</text>
+</svg>
