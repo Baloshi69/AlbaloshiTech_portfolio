@@ -50,7 +50,7 @@ const floatingLogos: FloatingLogo[] = [
 ];
 
 const HeroSection = () => {
-  const headline = "Hey, I\u2019m Albalosh Nawaz\nYour Certified Bubble.io Developer";
+  const headline = "Hey, I\u2019m Albalosh Nawaz Your Certified Bubble.io Developer";
   const [displayedHeadline, setDisplayedHeadline] = React.useState("");
   const [isTypingComplete, setIsTypingComplete] = React.useState(false);
   const [prefersReducedMotion, setPrefersReducedMotion] = React.useState(false);
@@ -138,12 +138,12 @@ const HeroSection = () => {
       </div>
       <div className="container relative z-20">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2 md:items-center">
-          <div className="space-y-8 relative z-20">
+          <div className="relative z-20 space-y-5 md:space-y-6">
             <div className="inline-flex items-center rounded-full bg-[#F4F7FF] px-4 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-theme-blue">
               Certified Bubble.io Developer • Google IT Support Specialist
             </div>
-            <div className="space-y-4">
-              <h1 className="text-4xl font-bold leading-tight text-slate-900 sm:text-5xl md:text-6xl">
+            <div className="space-y-3">
+              <h1 className="text-3xl font-bold leading-snug text-slate-900 sm:text-4xl md:text-5xl">
                 <span className="typewriter-text">
                   {displayedHeadline}
                 </span>
@@ -153,7 +153,7 @@ const HeroSection = () => {
                 />
               </h1>
             </div>
-            <p className="text-lg leading-relaxed text-slate-600">
+            <p className="text-base leading-relaxed text-slate-600 sm:text-lg">
               I build reliable web apps, MVPs, and automation systems for founders, startups, and small businesses. Every plan,
               integration, test, and deployment is handled personally so you get the focus of a solo developer with five years of
               hands-on Bubble.io delivery.

@@ -198,8 +198,8 @@
 
 .typewriter-text {
   display: inline-block;
-  white-space: pre-line;
-  background: linear-gradient(90deg, #0055ff 0%, #ff8c4c 100%);
+  white-space: normal;
+  background: linear-gradient(90deg, #ff8c4c 0%, #ffb347 55%, #0055ff 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -211,7 +211,7 @@
   width: 0.18em;
   height: 1.1em;
   margin-left: 0.2rem;
-  background: linear-gradient(180deg, #0055ff 0%, #ff8c4c 100%);
+  background: linear-gradient(180deg, #ff8c4c 0%, #ffb347 70%, #0055ff 100%);
   animation: caretBlink 1s steps(2, start) infinite;
 }
 
