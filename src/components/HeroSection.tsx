@@ -50,6 +50,69 @@ const floatingLogos: FloatingLogo[] = [
 ];
 
 const HeroSection = () => {
+  const headline = "Hey, I\u2019m Albalosh Nawaz\nYour Certified Bubble.io Developer";
+  const [displayedHeadline, setDisplayedHeadline] = React.useState("");
+  const [isTypingComplete, setIsTypingComplete] = React.useState(false);
+  const [prefersReducedMotion, setPrefersReducedMotion] = React.useState(false);
+
+  React.useEffect(() => {
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+    const handleChange = (event: MediaQueryListEvent) => {
+      setPrefersReducedMotion(event.matches);
+    };
+
+    setPrefersReducedMotion(mediaQuery.matches);
+
+    if (mediaQuery.addEventListener) {
+      mediaQuery.addEventListener("change", handleChange);
+    } else {
+      mediaQuery.addListener(handleChange);
+    }
+
+    return () => {
+      if (mediaQuery.removeEventListener) {
+        mediaQuery.removeEventListener("change", handleChange);
+      } else {
+        mediaQuery.removeListener(handleChange);
+      }
+    };
+  }, []);
+
+  React.useEffect(() => {
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    setDisplayedHeadline("");
+    setIsTypingComplete(false);
+
+    if (prefersReducedMotion) {
+      setDisplayedHeadline(headline);
+      setIsTypingComplete(true);
+      return;
+    }
+
+    let currentIndex = 0;
+    const interval = window.setInterval(() => {
+      currentIndex += 1;
+      setDisplayedHeadline(headline.slice(0, currentIndex));
+
+      if (currentIndex >= headline.length) {
+        window.clearInterval(interval);
+        setIsTypingComplete(true);
+      }
+    }, 45);
+
+    return () => {
+      window.clearInterval(interval);
+    };
+  }, [headline, prefersReducedMotion]);
+
   return (
     <section id="hero" className="relative overflow-hidden pt-28 pb-16">
       <div className="floating-logo-cloud pointer-events-none absolute inset-0 hidden md:block z-10">
@@ -77,12 +140,17 @@ const HeroSection = () => {
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2 md:items-center">
           <div className="space-y-8 relative z-20">
             <div className="inline-flex items-center rounded-full bg-[#F4F7FF] px-4 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-theme-blue">
-              Freelance Bubble.io Partner
+              Certified Bubble.io Developer • Google IT Support Specialist
             </div>
             <div className="space-y-4">
-              <p className="text-sm font-semibold text-theme-blue">Certified Bubble.io Developer • Google IT Support Specialist</p>
               <h1 className="text-4xl font-bold leading-tight text-slate-900 sm:text-5xl md:text-6xl">
-                Hello, I&rsquo;m Albalosh Nawaz -- Your Certified Bubble.io Developer
+                <span className="typewriter-text">
+                  {displayedHeadline}
+                </span>
+                <span
+                  className={`typewriter-caret ${isTypingComplete ? "opacity-0" : "opacity-100"}`}
+                  aria-hidden="true"
+                />
               </h1>
             </div>
             <p className="text-lg leading-relaxed text-slate-600">
@@ -106,7 +174,6 @@ const HeroSection = () => {
               </Button>
             </div>
             <div className="flex flex-wrap items-center gap-4 text-slate-500">
-              <span className="text-sm font-semibold text-slate-600">Connect with me</span>
               {socialLinks.map(({ label, href, Icon }) => (
                 <a
                   key={label}
@@ -132,8 +199,13 @@ const HeroSection = () => {
                   alt="Al Baloshi Nawaz headshot"
                   className="h-full w-full rounded-full object-cover"
                 />
-                <div className="absolute -bottom-6 right-0 rounded-full bg-[#ff8c4c] px-4 py-2 text-sm font-semibold text-white shadow-[0_15px_30px_rgba(0,0,0,0.15)]">
-                  Al Baloshi Nawaz
+                <div className="absolute -bottom-6 right-0 flex flex-col items-end gap-3">
+                  <div className="rounded-full bg-[#ff8c4c] px-4 py-2 text-sm font-semibold text-white shadow-[0_15px_30px_rgba(0,0,0,0.15)]">
+                    Al Baloshi Nawaz
+                  </div>
+                  <div className="rounded-full border border-white/70 bg-white/90 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-slate-800 shadow-[0_15px_30px_rgba(15,23,42,0.12)]">
+                    +4 Years Experience
+                  </div>
                 </div>
               </div>
             </div>
