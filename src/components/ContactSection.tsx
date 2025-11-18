@@ -46,7 +46,7 @@ const ContactSection = () => {
 
   const contactInfo = [
     {
-      icon: <Mail className="h-5 w-5 text-theme-blue" />,
+      icon: <Mail className="h-5 w-5 text-[#ff8c4c]" />,
       title: "Email me directly",
       description: "Share your brief and I'll respond within one business day.",
       details: [
@@ -61,7 +61,7 @@ const ContactSection = () => {
       ],
     },
     {
-      icon: <MessageCircle className="h-5 w-5 text-theme-blue" />,
+      icon: <MessageCircle className="h-5 w-5 text-[#ff8c4c]" />,
       title: "WhatsApp / Phone",
       description: "Best channel for quick questions or sharing voice notes.",
       details: [
@@ -72,7 +72,7 @@ const ContactSection = () => {
       ],
     },
     {
-      icon: <MapPin className="h-5 w-5 text-theme-blue" />,
+      icon: <MapPin className="h-5 w-5 text-[#ff8c4c]" />,
       title: "Location & timezone",
       description: "Gwadar, Pakistan -- collaborating with teams worldwide.",
       details: [
@@ -102,8 +102,8 @@ const ContactSection = () => {
               <div className="mt-6 space-y-4">
                 {contactInfo.map((info) => (
                   <div key={info.title} className="rounded-2xl border border-slate-200 bg-white p-4">
-                    <div className="flex items-start gap-3">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#EEF4FF] text-theme-blue">
+                    <div className="flex items-center gap-3">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#fff4ec] text-[#ff8c4c]">
                         {info.icon}
                       </div>
                       <div className="flex-1">

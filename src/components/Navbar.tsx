@@ -109,7 +109,7 @@ const Navbar = () => {
         <button
           type="button"
           onClick={handleBack}
-          className="flex w-full items-center gap-2 rounded-lg border border-theme-blue/30 px-4 py-2 text-sm font-medium text-theme-blue hover:border-theme-blue hover:text-theme-blue/80"
+          className="flex w-full items-center gap-2 rounded-lg border border-[#ffb48a] px-4 py-2 text-sm font-medium text-[#d85a1a] transition-colors hover:border-[#ff8c4c] hover:text-[#ff8c4c]"
         >
           <HomeIcon className="h-4 w-4" aria-hidden="true" />
           <span>{backLabel}</span>
@@ -123,7 +123,7 @@ const Navbar = () => {
           <button
             type="button"
             onClick={handleBack}
-            className="flex w-full items-center gap-2 rounded-lg border border-theme-blue/30 px-4 py-2 text-sm font-medium text-theme-blue hover:border-theme-blue hover:text-theme-blue/80"
+            className="flex w-full items-center gap-2 rounded-lg border border-[#ffb48a] px-4 py-2 text-sm font-medium text-[#d85a1a] transition-colors hover:border-[#ff8c4c] hover:text-[#ff8c4c]"
           >
             <HomeIcon className="h-4 w-4" aria-hidden="true" />
             <span>{backLabel}</span>
@@ -131,7 +131,7 @@ const Navbar = () => {
           <button
             type="button"
             onClick={handleViewFullPortfolio}
-            className="flex w-full items-center gap-2 rounded-lg bg-theme-blue px-4 py-2 text-sm font-semibold text-white hover:bg-theme-blue/90"
+            className="flex w-full items-center gap-2 rounded-lg bg-gradient-to-r from-[#ff8c4c] via-[#f96f4a] to-[#ffb347] px-4 py-2 text-sm font-semibold text-white shadow-[0_15px_30px_rgba(249,111,74,0.35)] transition hover:shadow-[0_20px_40px_rgba(249,111,74,0.4)]"
           >
             <LayoutGrid className="h-4 w-4" aria-hidden="true" />
             <span>View Full Portfolio</span>
@@ -198,7 +198,7 @@ const Navbar = () => {
             <button
               type="button"
               onClick={() => setIsMobileMenuOpen((prev) => !prev)}
-              className="flex items-center rounded-md p-2 text-slate-900 hover:text-theme-blue focus:outline-none focus-visible:ring-2 focus-visible:ring-theme-blue"
+              className="flex items-center rounded-md p-2 text-slate-900 hover:text-[#ff8c4c] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#ff8c4c]"
               aria-label={isMobileMenuOpen ? "Close navigation" : "Open navigation"}
               aria-expanded={isMobileMenuOpen}
             >
@@ -216,7 +216,7 @@ const Navbar = () => {
             <button
               type="button"
               onClick={handleBack}
-              className="inline-flex items-center gap-2 rounded-lg border border-theme-blue/30 bg-transparent px-4 py-2 text-sm font-medium text-theme-blue hover:border-theme-blue hover:text-theme-blue/80"
+              className="inline-flex items-center gap-2 rounded-lg border border-[#ffb48a] bg-transparent px-4 py-2 text-sm font-medium text-[#d85a1a] transition-colors hover:border-[#ff8c4c] hover:text-[#ff8c4c]"
             >
               <HomeIcon className="h-4 w-4" aria-hidden="true" />
               <span>{backLabel}</span>
@@ -229,7 +229,7 @@ const Navbar = () => {
             <button
               type="button"
               onClick={handleBack}
-              className="inline-flex items-center gap-2 rounded-lg border border-theme-blue/30 bg-transparent px-4 py-2 text-sm font-medium text-theme-blue hover:border-theme-blue hover:text-theme-blue/80"
+              className="inline-flex items-center gap-2 rounded-lg border border-[#ffb48a] bg-transparent px-4 py-2 text-sm font-medium text-[#d85a1a] transition-colors hover:border-[#ff8c4c] hover:text-[#ff8c4c]"
             >
               <HomeIcon className="h-4 w-4" aria-hidden="true" />
               <span>{backLabel}</span>
@@ -237,7 +237,7 @@ const Navbar = () => {
             <button
               type="button"
               onClick={handleViewFullPortfolio}
-              className="inline-flex items-center gap-2 rounded-lg bg-theme-blue px-4 py-2 text-sm font-semibold text-white hover:bg-theme-blue/90"
+              className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-[#ff8c4c] via-[#f96f4a] to-[#ffb347] px-4 py-2 text-sm font-semibold text-white shadow-[0_18px_40px_rgba(249,111,74,0.35)] transition hover:-translate-y-0.5 hover:shadow-[0_22px_50px_rgba(249,111,74,0.45)]"
             >
               <LayoutGrid className="h-4 w-4" aria-hidden="true" />
               <span>View Full Portfolio</span>

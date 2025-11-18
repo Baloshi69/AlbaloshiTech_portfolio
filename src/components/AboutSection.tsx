@@ -8,7 +8,7 @@ const skills = [
     description:
       "I build secure SaaS platforms, client portals, and dashboards with clean structure and long-term maintainability. Your product can grow without needing expensive rebuilds.",
     Icon: Layers,
-    accent: "from-[#eef4ff] to-white",
+    accent: "from-[#fff2e7] via-white to-white",
   },
   {
     title: "Backend logic & API integrations",
@@ -16,7 +16,7 @@ const skills = [
     description:
       "I design efficient databases, build advanced workflows, and connect your app to the right APIs. The result is a system that stays stable, flexible, and ready for future expansion.",
     Icon: PlugZap,
-    accent: "from-[#f0f9ff] to-white",
+    accent: "from-[#fff4ec] via-white to-white",
   },
   {
     title: "Automation workflows (n8n, Make, Zapier)",
@@ -24,7 +24,7 @@ const skills = [
     description:
       "I create automation systems with n8n as the primary tool, supported by Make and Zapier where needed. These workflows remove repetitive tasks and keep your processes dependable.",
     Icon: Workflow,
-    accent: "from-[#fff5f0] to-white",
+    accent: "from-[#fff0e2] via-white to-white",
   },
   {
     title: "Custom JavaScript enhancements",
@@ -32,7 +32,7 @@ const skills = [
     description:
       "When Bubble reaches its limits, I add custom JavaScript to improve the experience, unlock new behaviours, and provide the functionality your users expect.",
     Icon: Cpu,
-    accent: "from-[#f8f5ff] to-white",
+    accent: "from-[#ffeef8] via-white to-white",
   },
   {
     title: "AI features and integrations",
@@ -40,7 +40,7 @@ const skills = [
     description:
       "I integrate AI assistants, content tools, data extraction, smart workflows and more. The goal is to add features that create value for your customers, not gimmicks.",
     Icon: Database,
-    accent: "from-[#f3fbff] to-white",
+    accent: "from-[#fff6ec] via-white to-white",
   },
   {
     title: "Performance and cleanup",
@@ -48,7 +48,7 @@ const skills = [
     description:
       "I identify issues, clean workflows, remove bottlenecks and optimize your database. Your app becomes quicker, smoother, and ready for real traffic.",
     Icon: Gauge,
-    accent: "from-[#fff7ed] to-white",
+    accent: "from-[#fff4e0] via-white to-white",
   },
 ];
 
@@ -86,7 +86,7 @@ const AboutSection = () => {
       <div className="container space-y-12">
         <div className="grid items-start gap-12 lg:grid-cols-2">
           <div className="space-y-6">
-            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-theme-blue">About Me</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#ff8c4c]">About Me</p>
             <h2 className="text-4xl font-bold text-slate-900">I help founders build and optimise Bubble apps with clean logic, automation, and AI-ready structure.</h2>
             <p className="text-lg leading-relaxed text-slate-600">
               I'm Al Baloshi Nawaz (Baloshi69), a certified Bubble.io developer and Google IT Support Specialist. I work directly with founders, operators, and small teams who need
@@ -115,7 +115,7 @@ const AboutSection = () => {
 
         <div className="space-y-5">
           <div className="text-center">
-            <h3 className="text-3xl font-bold text-theme-blue">What I bring to every build</h3>
+            <h3 className="text-3xl font-bold text-transparent bg-gradient-to-r from-[#ff8c4c] via-[#f96f4a] to-[#ffb347] bg-clip-text">What I bring to every build</h3>
             <p className="mt-2 text-base text-slate-600">
               These are the pillars I lean on when I&rsquo;m building Bubble apps for founders who need production-ready software.
             </p>
@@ -124,10 +124,10 @@ const AboutSection = () => {
             {skills.map(({ title, subtitle, description, Icon, accent }) => (
               <article
                 key={title}
-                className="rounded-3xl border border-slate-100 bg-white/90 p-6 shadow-[0_28px_60px_-40px_rgba(15,23,42,0.45)] transition-shadow hover:-translate-y-0.5 hover:shadow-[0_35px_75px_-45px_rgba(15,23,42,0.55)]"
+                className="rounded-[32px] border border-white/70 bg-gradient-to-br from-white via-[#fffaf5] to-white/90 p-6 shadow-[0_30px_70px_-50px_rgba(15,23,42,0.45)] transition hover:-translate-y-1 hover:shadow-[0_40px_90px_-55px_rgba(15,23,42,0.45)]"
               >
                 <div className="flex gap-4">
-                  <div className={`flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-b ${accent} text-theme-blue`}>
+                  <div className={`flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br ${accent} text-[#ff8c4c] shadow-[0_15px_35px_rgba(249,140,76,0.25)]`}>
                     <Icon className="h-6 w-6" aria-hidden="true" />
                   </div>
                   <div className="flex-1">

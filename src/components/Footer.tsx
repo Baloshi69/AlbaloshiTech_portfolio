@@ -10,7 +10,7 @@ const Footer = () => {
       <div className="container">
         <div className="flex flex-col justify-between gap-8 md:flex-row md:gap-12">
           <div className="max-w-sm space-y-2">
-            <a href="#hero" className="flex items-center text-xl transition-colors hover:text-theme-blue">
+            <a href="#hero" className="flex items-center text-xl transition-colors hover:text-[#ff8c4c]">
               <BrandName className="gap-3" iconClassName="text-base md:text-lg" textClassName="text-base md:text-lg" />
             </a>
             <p className="text-sm text-slate-600">
@@ -27,7 +27,7 @@ const Footer = () => {
                   href={href}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 transition-colors hover:border-theme-blue hover:text-theme-blue"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 text-slate-500 transition-colors hover:border-[#ff8c4c] hover:bg-[#fff4ec] hover:text-[#ff8c4c]"
                   aria-label={label}
                 >
                   <Icon className="h-5 w-5" />
