@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { useHoverTypewriter } from "@/hooks/useHoverTypewriter";
 import { CTA_DEFAULT_TEXT, CTA_PAUSE_DURATION, CTA_PHRASES, CTA_TYPING_DELAY } from "@/lib/ctaMessages";
 import { socialLinks } from "@/lib/social-links";
+import { useContactVisibility } from "@/hooks/useContactVisibility";
 
 const UNIFIED_LOGO_SCALE = 0.75;
 
@@ -87,6 +88,7 @@ const HeroSection = () => {
   const [displayedHeadline, setDisplayedHeadline] = React.useState("");
   const [isTypingComplete, setIsTypingComplete] = React.useState(false);
   const [prefersReducedMotion, setPrefersReducedMotion] = React.useState(false);
+  const shouldShowContact = useContactVisibility();
 
   React.useEffect(() => {
     if (typeof window === "undefined") {
@@ -210,7 +212,7 @@ const HeroSection = () => {
               clarity, and expertise of a dedicated freelance Bubble.io developer.
             </p>
             <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:justify-center sm:items-center">
-              <HoverTypewriterCTA />
+              {shouldShowContact && <HoverTypewriterCTA />}
               <Button
                 asChild
                 variant="outline"
@@ -219,20 +221,22 @@ const HeroSection = () => {
                 <a href="#projects">See my recent work</a>
               </Button>
             </div>
-            <div className="flex flex-wrap items-center justify-center gap-4 text-slate-500">
-              {socialLinks.map(({ label, href, Icon }) => (
-                <a
-                  key={label}
-                  href={href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 text-slate-500 transition-colors hover:border-[#ff8c4c] hover:bg-[#fff4ec] hover:text-[#ff8c4c]"
-                  aria-label={label}
-                >
-                  <Icon className="h-5 w-5" aria-hidden="true" />
-                </a>
-              ))}
-            </div>
+            {shouldShowContact && (
+              <div className="flex flex-wrap items-center justify-center gap-4 text-slate-500">
+                {socialLinks.map(({ label, href, Icon }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 text-slate-500 transition-colors hover:border-[#ff8c4c] hover:bg-[#fff4ec] hover:text-[#ff8c4c]"
+                    aria-label={label}
+                  >
+                    <Icon className="h-5 w-5" aria-hidden="true" />
+                  </a>
+                ))}
+              </div>
+            )}
           </div>
           <div className="relative flex justify-center z-0">
             <div className="absolute -bottom-16 -left-6 hidden h-36 w-36 rounded-3xl bg-[#ffb347]/20 blur-3xl md:block" aria-hidden="true" />
@@ -242,12 +246,12 @@ const HeroSection = () => {
               <div className="relative h-72 w-72 rounded-full border-[10px] border-white bg-white shadow-[0_45px_120px_-70px_rgba(15,23,42,0.55)] md:h-80 md:w-80">
                 <img
                   src="/Hero_circle_pic.jpeg"
-                  alt="Al Baloshi Nawaz headshot"
+                  alt="Nasir Nawaz headshot"
                   className="h-full w-full rounded-full object-cover"
                 />
                 <div className="absolute -bottom-6 right-0 flex flex-col items-end gap-1.5">
                   <div className="rounded-full bg-[#ff8c4c] px-4 py-2 text-sm font-semibold text-white shadow-[0_15px_30px_rgba(0,0,0,0.15)]">
-                    Al Baloshi Nawaz
+                    Nasir Nawaz
                   </div>
                   <div className="rounded-full border border-white/70 bg-white/90 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-slate-800 shadow-[0_15px_30px_rgba(15,23,42,0.12)]">
                     +4 Years Experience

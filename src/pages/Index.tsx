@@ -33,7 +33,7 @@ const Index = () => {
         <meta property="og:type" content="website" />
         <meta property="og:url" content={buildCanonicalUrl("/")} />
         <meta property="og:image" content={DEFAULT_OG_IMAGE} />
-        <meta property="og:image:alt" content="AlBaloshiTech logo with tagline" />
+        <meta property="og:image:alt" content="Nasir Nawaz logo with tagline" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
@@ -41,7 +41,7 @@ const Index = () => {
         <meta name="twitter:title" content={DEFAULT_TITLE} />
         <meta name="twitter:description" content={DEFAULT_DESCRIPTION} />
         <meta name="twitter:image" content={DEFAULT_OG_IMAGE} />
-        <meta name="twitter:image:alt" content="AlBaloshiTech logo with tagline" />
+        <meta name="twitter:image:alt" content="Nasir Nawaz logo with tagline" />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",

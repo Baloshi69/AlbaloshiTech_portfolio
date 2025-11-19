@@ -1,7 +1,14 @@
 import React from "react";
 import { ArrowRight } from "lucide-react";
+import { useContactVisibility } from "@/hooks/useContactVisibility";
 
 const FAQSection = () => {
+  const shouldShowContact = useContactVisibility();
+
+  if (!shouldShowContact) {
+    return null;
+  }
+
   return (
     <section id="cta" className="bg-[#F9FBFF]">
       <div className="container">

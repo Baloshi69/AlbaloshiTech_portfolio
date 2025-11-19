@@ -6,6 +6,7 @@ import { useToast } from "@/hooks/use-toast";
 import { Mail, MessageCircle, MapPin } from "lucide-react";
 import { buildCalendlyLink } from "@/lib/calendly";
 import CalendlyLogo from "@/assets/logos/calendly.svg";
+import { useContactVisibility } from "@/hooks/useContactVisibility";
 
 type ContactFormData = {
   name: string;
@@ -14,6 +15,7 @@ type ContactFormData = {
 };
 
 const ContactSection = () => {
+  const shouldShowContact = useContactVisibility();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState<ContactFormData>({
     name: '',
@@ -21,6 +23,10 @@ const ContactSection = () => {
     message: ''
   });
   const { toast } = useToast();
+
+  if (!shouldShowContact) {
+    return null;
+  }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;

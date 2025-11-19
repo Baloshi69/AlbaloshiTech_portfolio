@@ -1,6 +1,13 @@
 import React from 'react';
+import { useContactVisibility } from "@/hooks/useContactVisibility";
 
 const WhatsappFloat = () => {
+  const shouldShowContact = useContactVisibility();
+
+  if (!shouldShowContact) {
+    return null;
+  }
+
   return (
     <a
       href="https://api.whatsapp.com/send?phone=923152637573"

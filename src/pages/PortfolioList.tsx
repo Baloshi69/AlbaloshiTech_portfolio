@@ -43,13 +43,13 @@ const PortfolioList: React.FC = () => {
   const currentPath = location.pathname + location.search + location.hash;
   const projects = getPortfolioProjects();
   const canonicalUrl = buildCanonicalUrl("/portfolio");
-  const pageTitle = "Portfolio | AlBaloshiTech";
+  const pageTitle = "Portfolio | Nasir Nawaz";
   const pageDescription =
     "Explore shipped no-code, low-code, and automation products crafted for high-velocity founders and operators.";
   const itemListSchema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "AlBaloshiTech Portfolio",
+    name: "Nasir Nawaz Portfolio",
     itemListElement: projects.map((project, index) => ({
       "@type": "ListItem",
       position: index + 1,
@@ -71,7 +71,7 @@ const PortfolioList: React.FC = () => {
         <meta property="og:type" content="website" />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:image" content={DEFAULT_OG_IMAGE} />
-        <meta property="og:image:alt" content="AlBaloshiTech logo with tagline" />
+        <meta property="og:image:alt" content="Nasir Nawaz logo with tagline" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
@@ -79,7 +79,7 @@ const PortfolioList: React.FC = () => {
         <meta name="twitter:title" content={pageTitle} />
         <meta name="twitter:description" content={pageDescription} />
         <meta name="twitter:image" content={DEFAULT_OG_IMAGE} />
-        <meta name="twitter:image:alt" content="AlBaloshiTech logo with tagline" />
+        <meta name="twitter:image:alt" content="Nasir Nawaz logo with tagline" />
         <script type="application/ld+json">{JSON.stringify(itemListSchema)}</script>
       </Helmet>
       <div className="min-h-screen bg-[#F9FBFF] text-slate-900">

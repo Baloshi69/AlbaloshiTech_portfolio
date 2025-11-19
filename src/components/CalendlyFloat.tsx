@@ -1,6 +1,7 @@
 import React from 'react';
 import { CalendarCheck } from "lucide-react";
 import { buildCalendlyLink } from "@/lib/calendly";
+import { useContactVisibility } from "@/hooks/useContactVisibility";
 
 const getCurrentFormData = () => {
   const nameInput = document.getElementById("name") as HTMLInputElement | null;
@@ -15,6 +16,12 @@ const getCurrentFormData = () => {
 };
 
 const CalendlyFloat = () => {
+  const shouldShowContact = useContactVisibility();
+
+  if (!shouldShowContact) {
+    return null;
+  }
+
   const handleClick = () => {
     const calendlyLink = buildCalendlyLink(getCurrentFormData());
     window.open(calendlyLink, "_blank", "noopener,noreferrer");

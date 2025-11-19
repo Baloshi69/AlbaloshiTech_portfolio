@@ -89,8 +89,8 @@ const AboutSection = () => {
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#ff8c4c]">About Me</p>
             <h2 className="text-4xl font-bold text-slate-900">I help founders build and optimise Bubble apps with clean logic, automation, and AI-ready structure.</h2>
             <p className="text-lg leading-relaxed text-slate-600">
-              I'm Al Baloshi Nawaz (Baloshi69), a certified Bubble.io developer and Google IT Support Specialist. I work directly with founders, operators, and small teams who need
-              fast, reliable development without the delays or miscommunication that come with agency layers.
+              I'm Nasir Nawaz (Baloshi69), a certified Bubble.io developer and Google IT Support Specialist. I work directly with founders, operators, and small teams who need fast,
+              reliable development without the delays or miscommunication that come with agency layers.
             </p>
             <p className="text-lg leading-relaxed text-slate-600">
               When you work with me, you speak directly to the person designing, building, integrating, and deploying your app. I handle everything end-to-end: front-end UI, database

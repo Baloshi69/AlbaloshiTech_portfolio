@@ -24,7 +24,7 @@ const PortfolioDetail: React.FC = () => {
   const project = getPortfolioProjects().find((item) => item.slug === slug);
 
   if (!project) {
-    const fallbackTitle = "Project Not Found | AlBaloshiTech";
+    const fallbackTitle = "Project Not Found | Nasir Nawaz";
     const canonicalUrl = buildCanonicalUrl(`/portfolio/${slug ?? ""}`);
 
     return (
@@ -100,7 +100,7 @@ const PortfolioDetail: React.FC = () => {
   });
 
   const canonicalUrl = buildCanonicalUrl(`/portfolio/${project.slug}`);
-  const pageTitle = `${project.title} | Portfolio Case Study | AlBaloshiTech`;
+  const pageTitle = `${project.title} | Portfolio Case Study | Nasir Nawaz`;
   const pageDescription = project.heroTagline ?? project.excerpt;
   const ogImage = toAbsoluteUrl(heroImage);
   const structuredData = {
@@ -488,5 +488,4 @@ const PortfolioDetail: React.FC = () => {
 };
 
 export default PortfolioDetail;
-
 

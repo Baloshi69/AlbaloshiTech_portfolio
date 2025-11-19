@@ -4,11 +4,18 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Home as HomeIcon, LayoutGrid, Menu, X } from "lucide-react";
 import BrandName from "@/components/BrandName";
 import { cn } from "@/lib/utils";
+import { useContactVisibility } from "@/hooks/useContactVisibility";
 
 type PortfolioNavState = {
   from?: string;
   fromProject?: string;
   returnTo?: string;
+};
+
+type NavLink = {
+  name: string;
+  href: string;
+  type: "anchor" | "route";
 };
 
 const Navbar = () => {
@@ -20,6 +27,7 @@ const Navbar = () => {
   const currentPath = location.pathname + location.search + location.hash;
   const pathSegments = location.pathname.split("/").filter(Boolean);
   const isPortfolioList = location.pathname === "/portfolio";
+  const shouldShowContact = useContactVisibility();
   const isPortfolioDetail =
     pathSegments[0] === "portfolio" && pathSegments.length === 2;
   const isLandingPage = location.pathname === "/";
@@ -39,7 +47,7 @@ const Navbar = () => {
     setIsMobileMenuOpen(false);
   }, [location.pathname]);
 
-  const navLinks = [
+  const baseNavLinks: NavLink[] = [
     {
       name: "About",
       href: "#about",
@@ -65,7 +73,9 @@ const Navbar = () => {
       href: "#contact",
       type: "anchor",
     },
-  ] as const;
+  ];
+
+  const navLinks = shouldShowContact ? baseNavLinks : baseNavLinks.filter((link) => link.name !== "Contact");
 
   const handleBack = () => {
     setIsMobileMenuOpen(false);

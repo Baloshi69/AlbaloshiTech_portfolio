@@ -15,7 +15,7 @@ const BrandName: React.FC<BrandNameProps> = ({
   iconClassName,
   textClassName,
   showIcon = true,
-  label = "ALbaloshi.Tech",
+  label = "Nasir Nawaz",
   showText = true,
 }) => {
   const renderLabel = () => {

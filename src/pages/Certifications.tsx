@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { Award, BadgeCheck, Sparkles, ShieldCheck, Target, Database, GraduationCap, Cloud, ExternalLink } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { useContactVisibility } from "@/hooks/useContactVisibility";
 
 type IconComponent = React.ElementType;
 
@@ -201,9 +202,10 @@ const journeyTimeline: { year: string; title: string; description: string; icon:
 const bubbleVerificationUrl = "https://bubble.io/certificate/1717326861532x553683627463259500";
 
 const CertificationsPage = () => {
-  const pageTitle = "Certifications & Skills | AlBaloshiTech";
+  const pageTitle = "Certifications & Skills | Nasir Nawaz";
   const pageDescription =
     "Verified certifications, badges, and product delivery skills that back every Bubble, AI, and automation project.";
+  const shouldShowContact = useContactVisibility();
 
   return (
     <>
@@ -239,12 +241,14 @@ const CertificationsPage = () => {
                     </div>
                   </div>
                   <div className="flex flex-wrap gap-4">
-                    <a
-                      href="/#contact"
-                      className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#ff8c4c] via-[#f96f4a] to-[#ffb347] px-7 py-3 text-base font-semibold text-white shadow-[0_20px_55px_rgba(249,111,74,0.35)] transition hover:-translate-y-0.5 hover:shadow-[0_30px_70px_rgba(249,111,74,0.45)]"
-                    >
-                      Book a certified review
-                    </a>
+                    {shouldShowContact && (
+                      <a
+                        href="/#contact"
+                        className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#ff8c4c] via-[#f96f4a] to-[#ffb347] px-7 py-3 text-base font-semibold text-white shadow-[0_20px_55px_rgba(249,111,74,0.35)] transition hover:-translate-y-0.5 hover:shadow-[0_30px_70px_rgba(249,111,74,0.45)]"
+                      >
+                        Book a certified review
+                      </a>
+                    )}
                     <a
                       href="#gallery"
                       className="inline-flex items-center justify-center gap-2 rounded-full border border-[#d4dcff] px-7 py-3 text-base font-semibold text-slate-900 transition hover:bg-white"
@@ -447,30 +451,32 @@ const CertificationsPage = () => {
             </div>
           </section>
 
-          <section className="container">
-            <div className="rounded-[32px] border border-white/70 bg-white/90 p-10 text-center shadow-[0_45px_120px_-80px_rgba(15,23,42,0.55)]">
-              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#d85a1a]">Ready when you are</p>
-              <h2 className="mt-3 text-3xl font-semibold text-slate-900">Need a certified partner for your build?</h2>
-              <p className="mt-4 text-lg text-slate-600">
-                Let&rsquo;s connect on a quick call and map the exact workflows, compliance, and automations your launch deserves.
-                I&rsquo;ll bring proof-backed plans and references for every certificate here.
-              </p>
-              <div className="mt-6 flex flex-wrap justify-center gap-4">
-                <a
-                  href="/#contact"
-                  className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#ff8c4c] via-[#f96f4a] to-[#ffb347] px-8 py-3 text-base font-semibold text-white shadow-[0_20px_45px_rgba(249,111,74,0.35)] transition hover:-translate-y-0.5 hover:shadow-[0_25px_55px_rgba(249,111,74,0.45)]"
-                >
-                  Book a discovery call
-                </a>
-                <a
-                  href="/#projects"
-                  className="inline-flex items-center gap-2 rounded-full border border-[#ffb48a] px-8 py-3 text-base font-semibold text-[#d85a1a] transition hover:border-[#ff8c4c] hover:text-[#ff8c4c]"
-                >
-                  Review signature builds
-                </a>
+          {shouldShowContact && (
+            <section className="container">
+              <div className="rounded-[32px] border border-white/70 bg-white/90 p-10 text-center shadow-[0_45px_120px_-80px_rgba(15,23,42,0.55)]">
+                <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#d85a1a]">Ready when you are</p>
+                <h2 className="mt-3 text-3xl font-semibold text-slate-900">Need a certified partner for your build?</h2>
+                <p className="mt-4 text-lg text-slate-600">
+                  Let&rsquo;s connect on a quick call and map the exact workflows, compliance, and automations your launch deserves.
+                  I&rsquo;ll bring proof-backed plans and references for every certificate here.
+                </p>
+                <div className="mt-6 flex flex-wrap justify-center gap-4">
+                  <a
+                    href="/#contact"
+                    className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#ff8c4c] via-[#f96f4a] to-[#ffb347] px-8 py-3 text-base font-semibold text-white shadow-[0_20px_45px_rgba(249,111,74,0.35)] transition hover:-translate-y-0.5 hover:shadow-[0_25px_55px_rgba(249,111,74,0.45)]"
+                  >
+                    Book a discovery call
+                  </a>
+                  <a
+                    href="/#projects"
+                    className="inline-flex items-center gap-2 rounded-full border border-[#ffb48a] px-8 py-3 text-base font-semibold text-[#d85a1a] transition hover:border-[#ff8c4c] hover:text-[#ff8c4c]"
+                  >
+                    Review signature builds
+                  </a>
+                </div>
               </div>
-            </div>
-          </section>
+            </section>
+          )}
         </main>
         <Footer />
       </div>
