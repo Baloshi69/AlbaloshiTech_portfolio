@@ -30,7 +30,6 @@ const floatingLogos: FloatingLogo[] = [
   { name: "Custom APIs", src: "/tech/custom-api.svg", top: "26%", left: "52%", delay: -1, duration: 19, scale: 1, rotation: 5 },
   { name: "Webhooks", src: "/tech/webhook.svg", top: "58%", left: "52%", delay: -9, duration: 21, scale: 0.9, rotation: -10 },
   { name: "JavaScript", src: "/tech/javascript.svg", top: "20%", left: "64%", delay: -4, duration: 17, scale: 0.9, rotation: 12 },
-  { name: "Claude AI", src: "/tech/claude-ai.svg", top: "30%", left: "46%", delay: -5, duration: 18, scale: 0.85, rotation: 2 },
   { name: "Anthropic", src: "/tech/anthropic.png", top: "34%", left: "54%", delay: -4, duration: 19, scale: 0.85, rotation: -4 },
   { name: "OpenAI", src: "/tech/openai.svg", top: "42%", left: "48%", delay: -5, duration: 20, scale: 0.75, rotation: -5 },
   { name: "Custom Code", src: "/tech/custom-code.svg", top: "70%", left: "60%", delay: -3, duration: 21, scale: 0.9, rotation: -6 },

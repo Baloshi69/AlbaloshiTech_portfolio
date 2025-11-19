@@ -46,20 +46,22 @@ const ProjectsSection = () => {
         </div>
 
         {featuredProjects.length > 0 && (
-          <div className="relative overflow-hidden rounded-[2.75rem] border border-white/50 bg-white/70 p-8 pb-10 shadow-[0_45px_120px_-90px_rgba(15,23,42,0.45)] backdrop-blur-xl">
-            <div className="pointer-events-none absolute inset-y-0 left-0 z-20 w-16 bg-gradient-to-r from-[#F9FBFF] via-[#F9FBFF]/80 to-transparent" />
-            <div className="pointer-events-none absolute inset-y-0 right-0 z-20 w-16 bg-gradient-to-l from-[#F9FBFF] via-[#F9FBFF]/80 to-transparent" />
-            <div className="project-marquee-scroll overflow-x-auto scrollbar-hide pr-6 cursor-grab active:cursor-grabbing">
-              <div className="project-marquee flex w-max gap-6">
-              {marqueeProjects.map((project, index) => {
+          <div className="relative overflow-hidden rounded-[2.75rem] border border-white/50 bg-white/70 shadow-[0_45px_120px_-90px_rgba(15,23,42,0.45)] backdrop-blur-xl">
+            <div className="pointer-events-none absolute inset-y-0 left-0 z-20 w-20 bg-gradient-to-r from-[#F9FBFF] via-[#F9FBFF]/80 to-transparent" />
+            <div className="pointer-events-none absolute inset-y-0 right-0 z-20 w-20 bg-gradient-to-l from-[#F9FBFF] via-[#F9FBFF]/80 to-transparent" />
+            <div className="pointer-events-none absolute inset-x-0 top-0 z-20 h-10 bg-gradient-to-b from-[#F9FBFF]/90 via-[#F9FBFF]/60 to-transparent" />
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-12 bg-gradient-to-t from-[#F9FBFF]/95 via-[#F9FBFF]/60 to-transparent" />
+            <div className="project-marquee-scroll overflow-x-auto overflow-y-hidden scrollbar-hide cursor-grab active:cursor-grabbing">
+              <div className="project-marquee flex w-max gap-5 px-6 py-10 sm:px-8">
+                {marqueeProjects.map((project, index) => {
                 const detailHref = `/portfolio/${project.slug}`;
                 const baseGradient = project.backgroundGradient ?? FALLBACK_GRADIENT;
                 const gradientStyle = { background: baseGradient };
                 const useDarkText = shouldUseDarkText(baseGradient);
                 const highlightItems =
-                  project.services?.slice(0, 3) ??
-                  project.outcomes?.slice(0, 3) ??
-                  project.description?.slice(0, 3) ??
+                  project.services?.slice(0, 2) ??
+                  project.outcomes?.slice(0, 2) ??
+                  project.description?.slice(0, 2) ??
                   [];
                 const excerpt =
                   project.excerpt?.replace(/\s*\n\s*/g, " ").trim() ??
@@ -73,7 +75,7 @@ const ProjectsSection = () => {
                   : "rounded-full bg-white/20 px-3 py-1 text-white/90";
                 const headingClass = useDarkText ? "text-xl font-semibold text-slate-900" : "text-xl font-semibold text-white";
                 const excerptClass = useDarkText ? "text-sm leading-relaxed text-slate-700" : "text-sm leading-relaxed text-white/80";
-                const listClass = useDarkText ? "mt-5 space-y-2 text-sm text-slate-800" : "mt-5 space-y-2 text-sm text-white/90";
+                const listClass = useDarkText ? "mt-4 space-y-1.5 text-[13px] text-slate-800" : "mt-4 space-y-1.5 text-[13px] text-white/90";
                 const arrowClass = useDarkText ? "mt-0.5 h-4 w-4 text-slate-900" : "mt-0.5 h-4 w-4 text-white";
                 const ctaBase =
                   "mt-auto inline-flex items-center justify-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2";
@@ -85,7 +87,7 @@ const ProjectsSection = () => {
                   <article
                     key={`${project.slug}-${index}`}
                     aria-hidden={index >= featuredProjects.length}
-                    className="group relative w-[320px] flex-shrink-0 sm:w-[360px] lg:w-[420px]"
+                    className="group relative w-[280px] flex-shrink-0 sm:w-[320px] lg:w-[360px] xl:w-[380px]"
                   >
                     <div
                       className="pointer-events-none absolute -inset-3 rounded-[38px] opacity-45 blur-[48px] transition duration-500 group-hover:opacity-65"
@@ -93,10 +95,13 @@ const ProjectsSection = () => {
                       aria-hidden="true"
                     />
                     <div
-                      className={`relative flex h-full flex-col rounded-[32px] border border-white/30 p-6 shadow-[0_35px_90px_-70px_rgba(15,23,42,0.55)] transition hover:-translate-y-0.5 hover:shadow-[0_55px_110px_-75px_rgba(15,23,42,0.55)] ${useDarkText ? "text-slate-900" : "text-white"}`}
+                      className={`relative flex h-full flex-col rounded-[32px] border border-white/30 p-5 sm:p-6 shadow-[0_35px_90px_-70px_rgba(15,23,42,0.55)] transition hover:-translate-y-0.5 hover:shadow-[0_55px_110px_-75px_rgba(15,23,42,0.55)] ${useDarkText ? "text-slate-900" : "text-white"}`}
                       style={gradientStyle}
                     >
-                      <Link to={detailHref} className="relative -mx-6 -mt-6 mb-8 block aspect-[16/9] overflow-hidden rounded-t-[32px]">
+                      <Link
+                        to={detailHref}
+                        className="relative -mx-5 -mt-5 mb-6 block aspect-[7/3] overflow-hidden rounded-t-[32px] sm:-mx-6 sm:-mt-6 sm:mb-8"
+                      >
                         {project.image ? (
                           <img src={project.image} alt={project.title} className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.04]" />
                         ) : (

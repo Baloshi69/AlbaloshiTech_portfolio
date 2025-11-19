@@ -153,7 +153,7 @@ const ContactSection = () => {
                     onChange={handleChange}
                     placeholder="Your name"
                     required
-                    className="border-slate-200 focus:border-theme-blue focus:ring-theme-blue"
+                    className="border-slate-200"
                   />
                 </div>
                 
@@ -169,12 +169,12 @@ const ContactSection = () => {
                     onChange={handleChange}
                     placeholder="Your email"
                     required
-                    className="border-slate-200 focus:border-theme-blue focus:ring-theme-blue"
+                    className="border-slate-200"
                   />
                 </div>
               </div>
               
-              <div className="mb-6">
+              <div className="flex flex-1 flex-col pb-6">
                 <label htmlFor="message" className="mb-2 block text-sm font-medium text-slate-600">
                   Project Details
                 </label>
@@ -184,9 +184,8 @@ const ContactSection = () => {
                   value={formData.message}
                   onChange={handleChange}
                   placeholder="Share goals, timelines, must-have features, and any existing stack so we can hit the ground running."
-                  rows={6}
                   required
-                  className="border-slate-200 focus:border-theme-blue focus:ring-theme-blue"
+                  className="flex-1 min-h-[220px] resize-none border-slate-200 text-base leading-relaxed"
                 />
               </div>
               

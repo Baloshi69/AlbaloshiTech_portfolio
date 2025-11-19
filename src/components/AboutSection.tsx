@@ -100,7 +100,7 @@ const AboutSection = () => {
               My priority is always the same: clean logic, scalable architecture, transparent communication, and shipping builds that are stable for real users and fast enough to grow.
             </p>
           </div>
-          <div className="rounded-3xl border border-white/60 bg-white p-6 shadow-[0_35px_70px_-45px_rgba(15,23,42,0.35)]">
+          <div className="rounded-3xl border border-white/60 bg-white p-6 shadow-[0_35px_70px_-45px_rgba(15,23,42,0.35)] lg:self-center">
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">How I work</p>
             <ul className="mt-4 space-y-3 text-slate-700">
               {howIWorkSteps.map(({ icon, bg, text }) => (
