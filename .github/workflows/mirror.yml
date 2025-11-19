@@ -3,11 +3,7 @@ name: Mirror to Repo B
 on:
   push:
     branches:
-<<<<<<< HEAD
-      - main
-=======
       - main   # change if your branch is different
->>>>>>> 6eca3b69f7531767d75f12673c658d22ea2f7a32
 
 jobs:
   mirror:
@@ -23,13 +19,6 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
 
-<<<<<<< HEAD
-      - name: Remove workflow files
-        run: |
-          rm -rf .github/workflows
-
-=======
->>>>>>> 6eca3b69f7531767d75f12673c658d22ea2f7a32
       - name: Configure Git
         run: |
           git config user.name "Baloshi69"
